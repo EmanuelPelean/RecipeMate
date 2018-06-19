@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  currentComponentDisplayed = 'recipe';
+
+  onDisplaySelection(selectedView: {displayType: string}) {
+      this.currentComponentDisplayed = selectedView.displayType;
+  }
 }
