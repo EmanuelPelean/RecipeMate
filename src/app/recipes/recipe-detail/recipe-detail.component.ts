@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Recipe} from '../recipe.model';
 
 @Component({
@@ -10,9 +10,17 @@ export class RecipeDetailComponent implements OnInit {
 
   @Input () recipeDetails: Recipe;
 
+
+  menuDisplayStatus = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onMenuClicked() {
+    this.menuDisplayStatus = !this.menuDisplayStatus;
+
   }
 
 }
