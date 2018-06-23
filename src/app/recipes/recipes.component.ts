@@ -15,10 +15,12 @@ export class RecipesComponent implements OnInit {
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.recipeService.recipeSelected
+      .subscribe(
+        (recipe: Recipe) => {
+          this.currentRecipe = recipe;
+        }
+      );
   }
 
-  recipeOfListItem(recipe: Recipe) {
-    this.currentRecipe = recipe;
-    console.log(this.currentRecipe);
-  }
 }
