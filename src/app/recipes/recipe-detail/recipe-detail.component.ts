@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Recipe} from '../recipe.model';
+import {RecipeService} from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -13,7 +14,7 @@ export class RecipeDetailComponent implements OnInit {
 
   menuDisplayStatus = false;
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,10 @@ export class RecipeDetailComponent implements OnInit {
   onMenuClicked() {
     this.menuDisplayStatus = !this.menuDisplayStatus;
 
+  }
+
+  onAddToShoppingList() {
+    this.recipeService.addIngredientsToShoppingList(this.recipeDetails.ingredients);
   }
 
 }
