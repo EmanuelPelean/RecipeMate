@@ -11,7 +11,6 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 export class RecipeDetailComponent implements OnInit {
   recipeDetails: Recipe;
   id: number;
-  menuDisplayStatus = false;
 
   constructor(private recipeService: RecipeService,
               private route: ActivatedRoute,
