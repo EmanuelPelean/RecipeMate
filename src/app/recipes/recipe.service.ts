@@ -41,6 +41,10 @@ export class RecipeService {
     this.slService.addIngredients(ingredients);
   }
 
+  deleteIngredientFromRecipe(index: number) {
+
+  }
+
   addRecipe(recipe: Recipe) {
     this.recipes.push(recipe);
     this.onRecipesChanged();
